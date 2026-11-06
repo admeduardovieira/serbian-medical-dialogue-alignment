@@ -1,0 +1,72 @@
+# Private data and generated experiment artifacts
+data/
+dataset/
+datasets/
+models/
+experiments/
+artifacts/
+outputs/
+checkpoints/
+checkpoint-*/
+wandb/
+logs/
+/run/
+/notebooks/figures/
+/notebooks/*.html
+/notebooks/*.pdf
+/notebooks/inspect_dpo_pairs.ipynb
+
+# Data exports, model weights, and serialized arrays
+*.json
+*.jsonl
+*.ndjson
+*.csv
+*.tsv
+*.parquet
+*.arrow
+*.feather
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.gguf
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.joblib
+
+# Dataset archives and recordings
+*.zip
+*.tar
+*.gz
+*.bz2
+*.xz
+*.7z
+*.wav
+*.mp3
+*.m4a
+*.flac
+
+# Local credentials and environment
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+.cache/
+
+# Python and notebook caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Local scratch files
+*.tmp
+*.log
+.DS_Store
+/POKRETANJE.md

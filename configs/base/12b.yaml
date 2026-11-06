@@ -1,0 +1,15 @@
+output_dir: experiments/base/12b
+system_prompt: prompts/assistant/baseline.md
+seed: 42
+
+model:
+  weights: google/gemma-3-12b-it
+  tokenizer: google/gemma-3-12b-it
+  quantization: 4bit
+
+generation:                 # answers on the validation split
+  max_input_length: 2048
+  max_new_tokens: 100
+  temperature: 0.3
+  top_p: 1.0
+  do_sample: true

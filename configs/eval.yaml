@@ -1,0 +1,36 @@
+output_dir: experiments/eval
+
+reference:                  # metrics against the recorded assistant answer
+  rouge_bleu: true
+  bertscore:
+    model_type: bert-base-multilingual-cased
+    lang: sr
+  embeddings:
+    e5:
+      model_name: intfloat/multilingual-e5-large
+      pooling: mean
+      prefix: 'query: '
+      max_length: 512
+      batch_size: 32
+    modernbertic:
+      model_name: permitt/galton-modernbertic-large
+      pooling: mean
+      prefix: ''
+      max_length: 512
+      batch_size: 32
+
+judge:                      # one call per rubric for every answer
+  model: qwen3.5:122b
+  url: http://127.0.0.1:11434/api/chat
+  rubric_prompts: prompts/judge/rubrics
+  ground_truth: true
+  parallel: 6
+  save_every: 20
+  options:
+    temperature: 0.1
+    top_p: 0.8
+    top_k: 20
+    min_p: 0.0
+    presence_penalty: 0.0
+    seed: 42
+    num_predict: 1200
